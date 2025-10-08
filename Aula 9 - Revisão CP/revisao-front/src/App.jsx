@@ -4,7 +4,6 @@ import Ex3GridColSpan from "./components/Ex3GridColSpan";
 import Ex4Gallery from "./components/Ex4Gallery";
 import Ex5CardsFlexGrow from "./components/Ex5CardsFlexGrow";
 import Ex6ButtonAnimation from "./components/Ex6ButtonAnimation";
-import Ex7Footer from "./components/Ex7Footer";
 
 export default function App() {
   return (
@@ -17,7 +16,7 @@ export default function App() {
         <Ex5CardsFlexGrow />
         <Ex6ButtonAnimation />
       </main>
-      <Ex7Footer />
+      
     </div>
   );
 }
