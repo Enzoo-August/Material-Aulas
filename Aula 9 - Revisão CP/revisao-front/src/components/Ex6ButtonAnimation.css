@@ -1,0 +1,67 @@
+/* ===== BASE DOS BOTÕES ===== */
+.btn-animated {
+  background-color: #2563eb; /* azul padrão */
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== HOVER GERAL ===== */
+.btn-animated:hover {
+  background-color: #1d4ed8; /* azul mais escuro */
+}
+
+/* ===== ANIMAÇÃO PULSE ===== */
+@keyframes pulseBtn {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(37, 99, 235, 0);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+  }
+}
+
+.pulse {
+  animation: pulseBtn 1.8s ease-in-out infinite;
+}
+
+/* ===== HIGHLIGHT LATERAL ===== */
+@keyframes highlightSlide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Brilho lateral que passa pelo botão */
+.highlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  animation: highlightSlide 2s linear infinite;
+}

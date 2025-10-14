@@ -1,0 +1,42 @@
+/* ========= MICROINTERAÇÃO DO LINK ========= */
+.nav-link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Linha que aparece embaixo do link */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.4s ease;
+}
+
+/* Quando passar o mouse, a linha aparece com animação */
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Pequeno brilho animado na linha ao aparecer */
+@keyframes lineGlow {
+  0% {
+    box-shadow: 0 0 2px white;
+  }
+  50% {
+    box-shadow: 0 0 8px white;
+  }
+  100% {
+    box-shadow: 0 0 2px white;
+  }
+}
+
+/* Aplica o brilho durante o hover */
+.nav-link:hover::after {
+  animation: lineGlow 1s ease-in-out;
+}
